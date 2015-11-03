@@ -1,0 +1,58 @@
+	<div id="header">
+	  <div>
+			<%= link_to(image_tag("top.png", :class => 'item_images'), { :controller => :root, :action => :index}) %>
+		      
+		    <%# Replace localhost by real host%>
+		      		
+			<div class="fb-like" data-href="http://localhost:3000/" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
+		</div>
+
+	<div><form id="selectedOptions" action= "">
+	  <b>"Select the country"</b>
+
+		<select id="selectedCountry">
+		  <option value disabled selected> -- select an option -- </option>
+			<option value="in">India</option>
+			<option value="de">Germany</option>
+			<option value="jp">Japan</option>
+			<option value="te">Test</option>
+			<option value="in">India</option>
+			<option value="de">Germany</option>
+			<option value="jp">Japan</option>
+			<option value="te">Test</option>
+		</select>
+
+    <b>"Select the Category"</b>
+		<select id="selectedCategory">
+		  <option value disabled selected> -- select an option -- </option>
+			<option value="35">Documentary</option>
+			<option value="34">Comedy</option>
+			<option value="2">Autos & Vehicles</option>
+			<option value="10">Music</option>
+			<option value="26">Howto & Style</option>
+			<option value="35">Documentary</option>
+			<option value="37">Family</option>
+			<option value="38">Foreign</option>
+			<option value="44">Trailers</option>
+			<option value="15">Pets & Animals</option>
+		</select>
+
+    <b>"Select the Limit"</b>
+		<select id="selectedLimit">
+		  <option value disabled selected> -- select an option -- </option>
+			<option value="5">5</option>
+			<option value="10">10</option>
+			<option value="15">15</option>
+			<option value="20">20</option>
+			<option value="25">25</option>
+			<option value="30">30</option>
+			<option value="50">50</option>
+			<option value="100">100</option>
+		</select>
+
+		<div><input type="submit" value="Submit the form" onclick="actionDetermine()"></div>
+	</form></div>
+
+
+
+	</div><!-- #header -->

@@ -1,0 +1,8 @@
+<% @result['items'].each do |item| %>
+
+  <% vid_embed_url = "https://www.youtube.com/embed/#{item['id']}" %>
+	<div><iframe width="854" height="480" src= <%= "#{vid_embed_url}" %> frameborder="0" allowfullscreen></iframe></div>
+<% end %>
+
+
+
