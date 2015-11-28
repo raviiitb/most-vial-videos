@@ -1,8 +1,78 @@
-<% @result['items'].each do |item| %>
-
-  <% vid_embed_url = "https://www.youtube.com/embed/#{item['id']}" %>
-	<div><iframe width="854" height="480" src= <%= "#{vid_embed_url}" %> frameborder="0" allowfullscreen></iframe></div>
-<% end %>
+<div id="heading"><h4>FUNNY VIDEOS</h4>
 
 
 
+
+	<% @funny_videos['items'].each_with_index do |item, index| %>
+
+	  <% video_id = item['id']['videoId'] %>
+	  <% vid_embed_url = "https://www.youtube.com/embed/#{video_id}" %>
+    <div class="vid-list">
+	    <iframe width="150" height="100" src= <%= "#{vid_embed_url}" %> frameborder="0" allowfullscreen></iframe>
+	    <div class="vid-title"><%= item['snippet']["title"] %></div>
+	    <ul class="vid-attributes">
+			  <li>
+			    <i class="fa fa-eye"></i> <%= number_with_delimiter(@funny_videos_stats['items'][index]['statistics']['viewCount']) %>
+			  </li>
+			  <li>
+			    <i class="fa fa-thumbs-up" style="color:green"></i><%= number_with_delimiter(@funny_videos_stats['items'][index]['statistics']['likeCount']) %>
+			  </li>
+			  <li>
+			    <i class="fa fa-thumbs-down" style="color:red"></i><%= number_with_delimiter(@funny_videos_stats['items'][index]['statistics']['dislikeCount']) %>
+			  </li>
+			</ul>
+	  </div>
+	  <hr>
+  <% end %>
+
+</div>
+
+
+<div id="heading"><h4>NEWS</h4></div>
+	<% @news_videos['items'].each_with_index do |item, index| %>
+
+	  <% video_id = item['id']['videoId'] %>
+	  <% vid_embed_url = "https://www.youtube.com/embed/#{video_id}" %>
+		<div class="vid-list">
+	    <iframe width="150" height="100" src= <%= "#{vid_embed_url}" %> frameborder="0" allowfullscreen></iframe>
+	    <div class="vid-title"><%= item['snippet']["title"] %></div>
+      <ul class="vid-attributes">
+			  <li>
+			    <i class="fa fa-eye"></i> <%= number_with_delimiter(@news_videos_stats['items'][index]['statistics']['viewCount']) %>
+			  </li>
+			  <li>
+			    <i class="fa fa-thumbs-up" style="color:green"></i><%= number_with_delimiter(@news_videos_stats['items'][index]['statistics']['likeCount']) %>
+			  </li>
+			  <li>
+			    <i class="fa fa-thumbs-down" style="color:red"></i><%= number_with_delimiter(@news_videos_stats['items'][index]['statistics']['dislikeCount']) %>
+			  </li>
+			</ul>
+	  </div>
+		<hr>
+  <% end %>
+</div>
+
+
+<div id="heading"><h4>MUSIC VIDEOS</h4></div>
+	<% @music_videos['items'].each_with_index do |item, index| %>
+
+	  <% video_id = item['id']['videoId'] %>
+	  <% vid_embed_url = "https://www.youtube.com/embed/#{video_id}" %>
+		<div class="vid-list">
+	    <iframe width="150" height="100" src= <%= "#{vid_embed_url}" %> frameborder="0" allowfullscreen></iframe>
+	    <div class="vid-title"><%= item['snippet']["title"] %></div>
+	    <ul class="vid-attributes">
+			  <li>
+			    <i class="fa fa-eye"></i> <%= number_with_delimiter(@music_videos_stats['items'][index]['statistics']['viewCount']) %>
+			  </li>
+			  <li>
+			    <i class="fa fa-thumbs-up" style="color:green"></i><%= number_with_delimiter(@music_videos_stats['items'][index]['statistics']['likeCount']) %>
+			  </li>
+			  <li>
+			    <i class="fa fa-thumbs-down" style="color:red"></i><%= number_with_delimiter(@music_videos_stats['items'][index]['statistics']['dislikeCount']) %>
+			  </li>
+			</ul>
+	  </div>
+		<hr>
+  <% end %>
+</div>

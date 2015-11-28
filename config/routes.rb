@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   # }
 
   root 'root#index', as: "root_url"
+  get "mostpopular"                    => "root#most_popular"
+  get "topviews"                      => "root#top_views"
   get "country/:c"                     => "root#country", constraints: country_constraints,  as: "list_with_country"
   get "category/:s"                    => "root#category",               as: "list_with_category"
   get "limit/:n"                        => "root#limit", as: "list_with_limit"

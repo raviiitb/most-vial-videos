@@ -1,0 +1,16 @@
+<div id="header">
+  <div>
+		<%= link_to(image_tag("home.png", :class => 'top-logo-style', ), { :controller => :root, :action => :index}, ) %>
+	      
+	  <%# Replace localhost by real host%>  		
+		<div class="fb-like" data-href="http://localhost:3000/" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
+
+    
+		<div>
+		  <a class="btn btn-block btn-lg btn-primary" href="mostpopular" role="button">Most Popular Videos</a>
+		</div><br>
+		<div>
+		  <a class="btn btn-block btn-lg btn-success" href="topviews" role="button">Top Views Videos</a>
+		</div>
+	</div>
+</div>
